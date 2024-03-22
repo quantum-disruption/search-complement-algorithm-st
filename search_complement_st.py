@@ -68,11 +68,11 @@ def simulate_quantum_circuit(target_node_decimal_representation, number_of_bits_
 # Streamlit UI
 st.title("Search Complement Algorithm Simulation")
 
-st.markdown('This algorithm reduces the probability of measuring the state associated to the target node')
+st.markdown('This algorithm reduces the probability of measuring the target state')
 
 # Input bars for setting variables
-target_node_decimal_representation = st.number_input("Target Node", value=0, min_value=0, step=1)
-number_of_bits_position_register = st.number_input("Number of Qubits of the Position Register", value=4, min_value=1, step=1)
+number_of_bits_position_register = st.number_input("Number of Bits to Represent the Target State", value=4, min_value=1, step=1)
+target_node_decimal_representation = st.number_input("Target State", value=0, min_value=0, max_value=2**number_of_bits_position_register, step=1)
 number_of_shots = st.number_input("Number of Shots", value=50000, min_value=1, step=1000)
 
 # Button to run simulation
